@@ -69,7 +69,9 @@ function NSC(beginfrom, inputinteger){
 			fib = fiba + fibb;
 			fiba = fibb;
 			fibb = fib;
-			sequence = sequence + fib + " ";
+			if(fib < inputinteger){
+				sequence = sequence + fib + " ";
+			}
 			
 		}while (fib < inputinteger);
 		return sequence;
