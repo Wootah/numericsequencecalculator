@@ -1,40 +1,48 @@
-(function(){
+//module design pattern
+function NSC(beginfrom, inputinteger){
 	"use strict";
-	let inputinteger = 70;
-	let begin = 0;
+	let validateinput = false;
+	let results = {
+		message: "",
+		sequential: "",
+		oddnumbers: "",
+		evennumbers: "",
+		numbersletters:"",
+		fibonacci:""
+	};
 
 	function sequential(){	
-		let results = "";
+		let sequence = "";
 		for (var i = 0; i <= inputinteger; i++) {
-			results = results + i + " ";
+			sequence = sequence + i + " ";
 		}
-		return results;
+		return sequence;
 	}
 
 	function oddnumbers(){	
-		let results = "";
+		let sequence = "";
 		for (var i = 0; i <= inputinteger; i++) {
 			if(i % 2 !== 0){
-			results = results + i + " ";
+			sequence = sequence + i + " ";
 
 			}
 		}
-		return results;
+		return sequence;
 	}
 
 	function evennumbers(){	
-		let results = "";
+		let sequence = "";
 		for (var i = 0; i <= inputinteger; i++) {
 			if(i % 2 === 0){
-			results = results + i + " ";
+			sequence = sequence + i + " ";
 
 			}
 		}
-		return results;
+		return sequence;
 	}
 
-	function numbersce(){	
-		let results = "";
+	function numbersletters(){	
+		let sequence = "";
 		for (var i = 0; i <= inputinteger; i++) {
 			let c;
 			if((i % 5 === 0)&&(i % 3 === 0)){
@@ -46,25 +54,25 @@
 			}else{
 				c = i;
 			}			
-			results = results + c + " ";
+			sequence = sequence + c + " ";
 		}
-		return results;
+		return sequence;
 	}
 
 	function fibonacci() {
 		let i = 0;
-		let results = "";
+		let sequence = "";
 		let fib = 0;
 		let fiba = 0;
 		let fibb = 0;
 		do {
 			fib = fiba + fibb;
 			if(fib===0){
-				results = results + fib + " ";
+				sequence = sequence + fib + " ";
 				fiba = 0;
 				fibb = 1;
 			}else if(fib===1){
-				results = results + fib + " ";
+				sequence = sequence + fib + " ";
 				fiba = 1;
 				fibb = 2;
 
@@ -72,16 +80,39 @@
 				fib = fiba + fibb;
 				fiba = fibb;
 				fibb = fib;
-				results = results + fib + " ";
+				sequence = sequence + fib + " ";
 			}
 		}while (fib < inputinteger);
-		return results;
+		return sequence;
 	}
 
-	//console.log(sequential()); 
-	//console.log(oddnumbers()); 
-	//console.log(evennumbers()); 
-	console.log(numbersce()); 
-	//console.log(fibonacci()); 
 
-})();
+	function validateforpositiveinteger() {
+		//http://www.inventpartners.com/javascript_is_int
+		 if((parseFloat(inputinteger) == parseInt(inputinteger)) && !isNaN(inputinteger)){
+		 	return true;
+		}else{
+			return false;
+		}	
+	}
+
+
+
+	function resultsfn(){
+		if(validateforpositiveinteger() === true){
+			results.message = "Here are the sequences.";
+			results.sequential = sequential();
+			results.oddnumbers = oddnumbers(); 
+			results.evennumbers = evennumbers();
+			results.numbersletters = numbersletters(); 
+			results.fibonacci = fibonacci();
+
+		}else{
+			results.message = "Please enter a positive integer.";
+
+		}
+		return results;
+	}
+	return resultsfn();
+
+}

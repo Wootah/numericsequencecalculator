@@ -1,0 +1,26 @@
+{
+  "name": "nsc",
+  "version": "1.0.0",
+  "description": "Global Nomads test program",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "lite": "lite-server",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wootah/numericsequencecalculator.git"
+  },
+  "author": "Matthew Kay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wootah/numericsequencecalculator/issues"
+  },
+  "homepage": "https://github.com/Wootah/numericsequencecalculator#readme",
+  "devDependencies": {
+    "jasmine": "^2.4.1",
+    "lite-server": "^2.2.2"
+  }
+}
