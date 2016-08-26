@@ -11,6 +11,8 @@ function NSC(beginfrom, inputinteger){
 		fibonacci:""
 	};
 
+
+
 	function sequential(){	
 		let sequence = "";
 		for (var i = 0; i <= inputinteger; i++) {
@@ -78,9 +80,9 @@ function NSC(beginfrom, inputinteger){
 	}
 
 
-	function validateforpositiveinteger() {
+	function validateforpositiveinteger(val) {
 		//http://www.inventpartners.com/javascript_is_int
-		 if((parseFloat(inputinteger) == parseInt(inputinteger)) && !isNaN(inputinteger)){
+		 if((parseFloat(val) == parseInt(val)) && !isNaN(val) && val >=0){
 		 	return true;
 		}else{
 			return false;
@@ -90,7 +92,7 @@ function NSC(beginfrom, inputinteger){
 
 
 	function resultsfn(){
-		if(validateforpositiveinteger() === true){
+		if(validateforpositiveinteger(inputinteger) === true){
 			results.message = "Here are the sequences.";
 			results.sequential = sequential();
 			results.oddnumbers = oddnumbers(); 
