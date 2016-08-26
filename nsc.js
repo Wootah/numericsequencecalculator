@@ -61,27 +61,16 @@ function NSC(beginfrom, inputinteger){
 
 	function fibonacci() {
 		let i = 0;
-		let sequence = "";
+		let sequence = "0 1 ";
 		let fib = 0;
 		let fiba = 0;
-		let fibb = 0;
+		let fibb = 1;
 		do {
 			fib = fiba + fibb;
-			if(fib===0){
-				sequence = sequence + fib + " ";
-				fiba = 0;
-				fibb = 1;
-			}else if(fib===1){
-				sequence = sequence + fib + " ";
-				fiba = 1;
-				fibb = 2;
-
-			}else{
-				fib = fiba + fibb;
-				fiba = fibb;
-				fibb = fib;
-				sequence = sequence + fib + " ";
-			}
+			fiba = fibb;
+			fibb = fib;
+			sequence = sequence + fib + " ";
+			
 		}while (fib < inputinteger);
 		return sequence;
 	}
