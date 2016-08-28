@@ -10,20 +10,10 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<!--         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-				<link rel="shortcut icon" type="image/png" href="jasmine-standalone-2.4.1/lib/jasmine-2.0.0/jasmine_favicon.png">
-		 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		   		<link rel="stylesheet" type="text/css" href="jasmine-standalone-2.4.1/lib/jasmine-2.0.0/jasmine.css">
-		
-				<script type="text/javascript" src="jasmine-standalone-2.4.1/lib/jasmine-2.0.0/jasmine.js"></script>
-				<script type="text/javascript" src="jasmine-standalone-2.4.1/lib/jasmine-2.0.0/jasmine-html.js"></script>
-				<script type="text/javascript" src="jasmine-standalone-2.4.1/lib/jasmine-2.0.0/boot.js"></script>
-		 -->		
-		 <script type="text/javascript" src="nsc.js"></script>
+		<script type="text/javascript" src="nsc.js"></script>
 		<script type="text/javascript">
 			function formSubmit(){
-				var nsc = new NSC(0,document.getElementById("input").value);
+				var nsc = NSC(document.getElementById("input").value);
 				document.getElementById("output").innerHTML = nsc.message;
 				document.getElementById("sequence1").innerHTML = nsc.sequential;
 				document.getElementById("sequence2").innerHTML = nsc.oddnumbers;
@@ -32,7 +22,6 @@
 				document.getElementById("sequence5").innerHTML = nsc.fibonacci;
 				return false;
 			}
-
 		</script>
     </head>
     <body>

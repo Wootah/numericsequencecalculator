@@ -1,6 +1,5 @@
-//module design pattern
-function NSC(beginfrom, inputinteger){
-	"use strict";
+"use strict";
+function NSC(ii){
 	let validateinput = false;
 	let results = {
 		message: "",
@@ -10,15 +9,14 @@ function NSC(beginfrom, inputinteger){
 		numbersletters:"",
 		fibonacci:""
 	};
+	let inputinteger = ii;
 
-
-
-	function sequential(){	
+	function sequentialfn(){	
 		let sequence = "";
 		for (var i = 0; i <= inputinteger; i++) {
 			sequence = sequence + i + " ";
 		}
-		return sequence;
+		return sequence.trim();
 	}
 
 	function oddnumbers(){	
@@ -29,7 +27,7 @@ function NSC(beginfrom, inputinteger){
 
 			}
 		}
-		return sequence;
+		return sequence.trim();
 	}
 
 	function evennumbers(){	
@@ -40,7 +38,7 @@ function NSC(beginfrom, inputinteger){
 
 			}
 		}
-		return sequence;
+		return sequence.trim();
 	}
 
 	function numbersletters(){	
@@ -58,7 +56,7 @@ function NSC(beginfrom, inputinteger){
 			}			
 			sequence = sequence + c + " ";
 		}
-		return sequence;
+		return sequence.trim();
 	}
 
 	function fibonacci() {
@@ -76,7 +74,7 @@ function NSC(beginfrom, inputinteger){
 			}
 			
 		}while (fib < inputinteger);
-		return sequence;
+		return sequence.trim();
 	}
 
 
@@ -92,9 +90,12 @@ function NSC(beginfrom, inputinteger){
 
 
 	function resultsfn(){
-		if(validateforpositiveinteger(inputinteger) === true){
+		if ( undefined === inputinteger ) {
+			results.message = "Please enter a positive integer.";
+
+		}else if(validateforpositiveinteger(inputinteger) === true){
 			results.message = "Here are the sequences.";
-			results.sequential = sequential();
+			results.sequential = sequentialfn();
 			results.oddnumbers = oddnumbers(); 
 			results.evennumbers = evennumbers();
 			results.numbersletters = numbersletters(); 
@@ -106,6 +107,7 @@ function NSC(beginfrom, inputinteger){
 		}
 		return results;
 	}
+
 	return resultsfn();
 
 }
